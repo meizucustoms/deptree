@@ -1,6 +1,9 @@
 # DepTree
 .so libraries dependencies tree generator (to .json file)
 
+## WARNING
+This script parses output of `patchelf --print-needed`. So all dlopen()-loaded libraries, without mention of them in ELF header will not be shown there! For example of that libraries: libmmcamera sensor/eeprom/... libraries, mmi libraries and others. By the way, very many other libraries mention their dependencies in ELF header.
+
 ## JSON Format
 ```json
 {
